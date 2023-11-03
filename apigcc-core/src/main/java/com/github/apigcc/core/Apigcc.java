@@ -73,7 +73,7 @@ public class Apigcc {
     private ParserStrategy loadParserStrategy() {
         ServiceLoader<ParserStrategy> serviceLoader = ServiceLoader.load(ParserStrategy.class);
         if (Iterables.isEmpty(serviceLoader)) {
-            throw new IllegalArgumentException("no com.apigcc.core.parser.ParserStrategy implements found");
+            throw new IllegalArgumentException("no com.github.apigcc.core.parser.ParserStrategy implements found");
         }
         if (StringHelper.isBlank(context.framework)) {
             return Iterables.get(serviceLoader, 0);
